@@ -62,7 +62,7 @@ headers= {
 }
 
 def cnn_db():
-    db = pymysql.connect("111.230.10.127", 'root', 'coolsoup', 'test', charset='utf8')
+    db = pymysql.connect("*.*.*.*", 'root', 'pwd', '*', charset='utf8')
     return db
 
 def get_asin_list(watch_style):
@@ -112,7 +112,7 @@ def selenium_down_loader(asin):
         capa = DesiredCapabilities.CHROME
         # option.add_argument('--first run')
         capa["pageLoadStrategy"] = "none"
-        # option.add_argument('--headless')
+        option.add_argument('--headless')
         option.add_argument("--disable-javascript")
         option.add_argument("--no-sandbox")
         # option.add_argument('')
@@ -127,8 +127,8 @@ def selenium_down_loader(asin):
         soup = BeautifulSoup(html, 'html.parser')
         tags = soup.find_all('title')
         #print(tags[0].text)
-        if tags[0].text == 'Page Not Found':
-            return html
+        # if tags[0].text == 'Page Not Found':
+        #     return html
 
         if tags[0].text == 'Robot Check':
             print("waring !!!,be check as robot!")
@@ -301,12 +301,12 @@ def about_mysql(msg):
     db.close()
 #
 
-asin_list=get_asin_list('men')
+asin_list=get_asin_list('boy')
 driver=selenium_down_loader(asin_list[0][0])[1]
 for asin in asin_list[1:]:
 
     # time.sleep(R.choice([4.5,3,5.5,7,4.5,2])-2)
-    analysis(asin[0],'men',driver)
+    analysis(asin[0],'boy',driver)
 
 # analysis('B07JGXSRR9','women')
 #mul_main()
