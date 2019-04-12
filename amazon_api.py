@@ -62,7 +62,7 @@ headers= {
 }
 
 def cnn_db():
-    db = pymysql.connect("111.230.10.127", 'root', 'coolsoup', 'test', charset='utf8')
+    db = pymysql.connect("*.*.*.*", 'root', '*', '*', charset='utf8')
     return db
 
 def get_asin_list(watch_style):
