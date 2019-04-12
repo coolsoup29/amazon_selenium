@@ -100,6 +100,8 @@ def get_asin(asurl,f_type):
         insert_sql([asin,tag.contents[1].attrs['src'],f_type])
 
     print("had done %s page"%page)
+    if page==99:
+        return "GG"
     # next_url='https://www.amazon.com'+soup.find_all('li','a-last')[0].contents[0].attrs['href']
     # print(next_url)
     driver.find_elements_by_xpath("//li[@class='a-last']")[0].click()
@@ -111,7 +113,7 @@ def get_asin(asurl,f_type):
 
 
 # get_asin('https://www.amazon.com/s?k=watches&rh=n%3A7147441011%2Cn%3A6358540011&dc&qid=1553074545&rnid=2941120011&ref=sr_nr_n_2')
-get_asin('https://www.amazon.com/s?k=watches&rh=n%3A7147440011%2Cn%3A6358544011&dc&qid=1554980068&rnid=2941120011&ref=sr_nr_n_6','women')
+get_asin('https://www.amazon.com/s?k=watches&i=fashion-boys-watches&rh=n%3A7147443011%2Cn%3A6358552011&dc&qid=1555031025&rnid=2941120011&ref=sr_pg_1','boy')
 
 
 
