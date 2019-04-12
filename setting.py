@@ -192,10 +192,10 @@ JP={
         'girl':'https://www.amazon.co.jp/gp/bestsellers/watch/2226426051/ref=zg_bs_nav_w_2_333009011'
 }
 
-host="111.230.10.127"
-user='root'
-pwd='coolsoup'
-DDB='test'
+host="*.*.*.*"
+user='*'
+pwd='*'
+DDB='*'
 
 
 
